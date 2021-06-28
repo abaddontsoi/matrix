@@ -1,0 +1,10 @@
+^D:\CMAKE\BUILD1\CMAKEFILES\B61A2AD069A6A7B5EB36F0F7EA9FEADC\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/cmake -BD:/cmake/build1 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/cmake/build1/Matrix.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
