@@ -2,13 +2,14 @@
 #include <string>
 #include <limits>
 #include "matrix.h"
+#include "matrix_lv3.h"
 
 using namespace std;
 
 int main(){
     matrix_lv2 mat1;
-    matrix_lv2 mat2;
-	matrix_lv2 _saving;
+    matrix_lv2 mat2 ;
+	matrix_lv2 _saving ;
 
 	mat1.get_element();
     cout<< "The matrix determinant is: " << mat1.get_deter() << endl;
@@ -26,7 +27,8 @@ int main(){
     mat2.cal_inverse();
     mat2.show_inverse();
 
-	_saving = mat1.product(_saving, mat2);
+    _saving.init_to_zero();
+	_saving = mat1.product( _saving, mat2);
     cout << "The following is the product of the first and the second matrix. " <<endl;
 	_saving.show();
 

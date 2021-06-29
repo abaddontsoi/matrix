@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\cmake\build1\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>D:\cmake\matrix\build1\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

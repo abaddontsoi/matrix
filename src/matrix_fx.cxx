@@ -1,5 +1,7 @@
 #include "matrix.h"
+#include "matrix_lv3.h"
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -31,6 +33,11 @@ void matrix_lv2::get_element(){
 
 }
 
+void matrix_lv2::get_element(double x00, double x01, double x10, double x11){
+
+}
+
+
 double matrix_lv2::get_deter(){
     //deter = x11 * x22 - x12 * x21;
 
@@ -52,6 +59,7 @@ bool matrix_lv2::get_inverse_status(){
 
 void matrix_lv2::show(){
     cout << "Your matrix is: " << endl;
+    cout << setprecision(6);
     for(int i = 0; i < Matrix_row_lv2; i++){
         for (int j = 0; j < Matrix_col_lv2; j++)
         {
@@ -69,10 +77,28 @@ void matrix_lv2::pass_adj_matrix(){
 }
 
 matrix_lv2 matrix_lv2::product(matrix_lv2 result_matrix,matrix_lv2 second_matrix){
-	result_matrix.matrix[0][0] = matrix[0][0] * second_matrix.matrix[0][0] + matrix[0][1] * second_matrix.matrix[1][0];
+
+    /*
+    result_matrix.matrix[0][0] = matrix[0][0] * second_matrix.matrix[0][0] + matrix[0][1] * second_matrix.matrix[1][0];
 	result_matrix.matrix[0][1] = matrix[0][0] * second_matrix.matrix[0][1] + matrix[0][1] * second_matrix.matrix[1][1];
 	result_matrix.matrix[1][0] = matrix[1][0] * second_matrix.matrix[0][0] + matrix[1][1] * second_matrix.matrix[1][0];
 	result_matrix.matrix[1][1] = matrix[1][0] * second_matrix.matrix[0][1] + matrix[1][1] * second_matrix.matrix[1][1];
+    */
+	
+   for (int i = 0; i < Matrix_row_lv2; i++)
+   {
+       for (int j = 0; j < Matrix_col_lv2; j++)
+       {
+           
+           for (int k = 0; k < 2; k++)
+           {
+                result_matrix.matrix[i][j] += matrix[i][k] * second_matrix.matrix[k][j];
+           }
+           
+           // result_matrix.matrix[i][j] = matrix[i][0] * second_matrix.matrix[0][j] + matrix[i][1]*second_matrix.matrix[1][j];
+       }
+       
+   }
 	return result_matrix;
 }
 
@@ -97,6 +123,7 @@ void matrix_lv2::cal_inverse(){
 
 void matrix_lv2::show_inverse(){
     cout << "The inverse matrix is: "<<endl;
+    cout << setprecision(6);
     for (int i = 0; i < Matrix_row_lv2; i++)
     {
         for (int j = 0; j < Matrix_col_lv2; j++)
@@ -106,4 +133,17 @@ void matrix_lv2::show_inverse(){
         cout<<endl;
     }
     
+}
+
+void matrix_lv2::init_to_zero(){
+    /*
+    */
+    for (int i = 0; i < Matrix_row_lv2; i++)
+    {
+        for (int j = 0; j < Matrix_col_lv2; j++)
+        {
+            matrix[i][j] = 0;
+        }
+        
+    }
 }

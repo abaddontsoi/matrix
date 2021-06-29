@@ -1,19 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\cmake\src\matrix.cxx">
+    <ClCompile Include="D:\cmake\matrix\src\matrix.cxx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\cmake\src\matrix_fx.cxx">
+    <ClCompile Include="D:\cmake\matrix\src\matrix_fx.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\cmake\matrix\src\matrix_lv3.cxx">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\cmake\CMakeLists.txt" />
+    <CustomBuild Include="D:\cmake\matrix\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{F6B71F74-F1B4-39E7-92F4-9A733FACD96C}</UniqueIdentifier>
+      <UniqueIdentifier>{0D6A0689-9352-3B42-B191-9C6DE6BBF268}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
