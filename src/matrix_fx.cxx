@@ -2,15 +2,31 @@
 #include "matrix_lv3.h"
 #include <iostream>
 #include <iomanip>
+#include <limits>
 
 using namespace std;
 
 matrix_lv2::matrix_lv2(/* args */)
 {
+    init_to_zero();
 }
+
+matrix_lv2::matrix_lv2(double passing[][2]){
+    for (int i = 0; i < Matrix_row_lv2; i++)
+    {
+        for (int j = 0; j < Matrix_col_lv2; j++)
+        {
+            matrix[i][j] = passing[i][j];
+        }
+        
+    }
+    
+}
+
 
 matrix_lv2::~matrix_lv2()
 {
+    
 }
 
 void matrix_lv2::get_element(){
@@ -33,10 +49,18 @@ void matrix_lv2::get_element(){
 
 }
 
-void matrix_lv2::get_element(double x00, double x01, double x10, double x11){
-
+void matrix_lv2::get_element(double passing[][2])
+{
+    for (int i = 0; i < Matrix_row_lv2; i++)
+    {
+        for (int j = 0; j < Matrix_col_lv2; j++)
+        {
+            matrix[i][j] = passing[i][j];
+        }
+        
+    }
+    
 }
-
 
 double matrix_lv2::get_deter(){
     //deter = x11 * x22 - x12 * x21;
@@ -123,6 +147,7 @@ void matrix_lv2::cal_inverse(){
 
 void matrix_lv2::show_inverse(){
     cout << "The inverse matrix is: "<<endl;
+    
     cout << setprecision(6);
     for (int i = 0; i < Matrix_row_lv2; i++)
     {

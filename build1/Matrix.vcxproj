@@ -317,7 +317,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\cmake\matrix\src\matrix.cxx" />
+    <ClCompile Include="D:\cmake\matrix\src\main.cxx" />
     <ClCompile Include="D:\cmake\matrix\src\matrix_fx.cxx" />
     <ClCompile Include="D:\cmake\matrix\src\matrix_lv3.cxx" />
   </ItemGroup>
